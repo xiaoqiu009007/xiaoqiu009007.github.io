@@ -19,9 +19,30 @@
     defer
   ></script>
 
-  <script src="script.js" defer></script>
-
   <style>
+    html[lang="en"] body,
+    html[lang="en"] body :is(h1, h2, h3, p, span, li, a, button, strong, small) {
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    html[lang="zh-CN"] body,
+    html[lang="zh-CN"] body :is(h1, h2, h3, p, span, li, a, button, strong, small) {
+      font-family: "Songti SC", "STSong", "SimSun", "宋体", serif;
+    }
+
+    .site-nav a {
+      font-weight: 700;
+    }
+
+    .zh-text,
+    html[lang="zh-CN"] .en-text {
+      display: none;
+    }
+
+    html[lang="zh-CN"] .zh-text {
+      display: inline;
+    }
+
     .education-list {
       display: grid;
       gap: 2rem;
@@ -103,7 +124,6 @@
   </style>
 </head>
 
-
 <body id="top">
 
   <!-- Background -->
@@ -113,15 +133,9 @@
     <span class="dune dune-three"></span>
   </div>
 
-
   <!-- HEADER -->
   <header class="site-header">
-
-    <a
-      class="brand"
-      href="index.html"
-      aria-label="Xia Meng homepage"
-    >
+    <a class="brand" href="index.html" aria-label="Xia Meng homepage">
       <span class="brand-mark photo-mark">
         <img src="sh.jpg" alt="">
       </span>
@@ -132,293 +146,217 @@
       </span>
     </a>
 
-
     <nav class="site-nav" aria-label="Main navigation">
-
-      <a
-        href="index.html#experience"
-        data-i18n="nav.experience"
-      >
-        Experience
+      <a href="index.html#experience">
+        <span class="en-text">Experience</span><span class="zh-text" lang="zh-CN">经历</span>
       </a>
 
-      <a
-        href="index.html#skillkit"
-        data-i18n="nav.skillkit"
-      >
-        Skillkit
+      <a href="index.html#skillkit">
+        <span class="en-text">Skillkit</span><span class="zh-text" lang="zh-CN">技能</span>
       </a>
 
-      <a
-        href="education.html"
-        data-i18n="nav.education"
-      >
-        Education
+      <a href="education.html">
+        <span class="en-text">Education</span><span class="zh-text" lang="zh-CN">教育</span>
       </a>
 
-      <a
-        href="highlights.html"
-        data-i18n="nav.highlights"
-      >
-        Highlights
+      <a href="highlights.html">
+        <span class="en-text">Highlights</span><span class="zh-text" lang="zh-CN">亮点</span>
       </a>
-
     </nav>
 
-
-    <button
-      class="lang-switch"
-      type="button"
-      data-lang-toggle
-    >
+    <button class="lang-switch" type="button" data-lang-toggle aria-label="Switch to Chinese">
       <span data-lang-option="en">EN</span>
       <span data-lang-option="zh">中</span>
     </button>
 
-
-    <a
-      class="nav-cta"
-      href="index.html#contact"
-      aria-label="Contact Xia Meng"
-    >
+    <a class="nav-cta" href="index.html#contact" aria-label="Contact Xia Meng">
       <i data-lucide="send"></i>
     </a>
-
   </header>
-
 
   <!-- MAIN -->
   <main class="detail-page">
-
     <!-- Page Intro -->
     <section class="page-hero">
-
       <p class="eyebrow">
-        Education & Training
+        <span class="en-text">Education &amp; Training</span><span class="zh-text" lang="zh-CN">教育与科研训练</span>
       </p>
 
       <h1>
-        Learning and exploring.
+        <span class="en-text">Learning and exploring.</span><span class="zh-text" lang="zh-CN">在学习与探索中建立科研基础。</span>
       </h1>
-
     </section>
-
 
     <!-- Education Cards -->
     <section class="detail-list education-list">
-
-
       <!-- CARD 1: Undergraduate Education -->
       <article class="detail-item edu-card">
-
         <div class="edu-text">
-
           <span>
-            Sep 2023 – Jul 2027
+            <span class="en-text">Sep 2023 – Jul 2027</span><span class="zh-text" lang="zh-CN">2023年9月—2027年7月</span>
           </span>
 
           <h2>
-            Undergraduate Education
+            <span class="en-text">Undergraduate Education</span><span class="zh-text" lang="zh-CN">本科教育</span>
           </h2>
 
           <ul class="detail-points">
-
             <li>
-              <strong>University</strong>
-              Hainan University
+              <span class="en-text"><strong>University</strong> Hainan University</span><span class="zh-text" lang="zh-CN"><strong>学校</strong> 海南大学</span>
             </li>
 
             <li>
-              <strong>Degree</strong>
-              Bachelor's Degree in Agriculture Education
+              <span class="en-text"><strong>Degree</strong> Bachelor's Degree in Agriculture Education</span><span class="zh-text" lang="zh-CN"><strong>学位</strong> 农学教育学士学位</span>
             </li>
 
             <li>
-              <strong>Academic Performance</strong>
-              Average Score: 87.65 / 100 · Top 7.14%
+              <span class="en-text"><strong>Academic Performance</strong> Average Score: 87.65 / 100 · Top 7.14%</span><span class="zh-text" lang="zh-CN"><strong>学业表现</strong> 平均成绩：87.65 / 100 · 专业前 7.14%</span>
             </li>
 
             <li>
-              <strong>Core Coursework</strong>
-              Genetics ·
-              Plant Physiology and Biochemistry ·
-              Microbiology
+              <span class="en-text"><strong>Core Coursework</strong> Genetics · Plant Physiology and Biochemistry · Microbiology</span><span class="zh-text" lang="zh-CN"><strong>核心课程</strong> 遗传学 · 植物生理与生化 · 微生物学</span>
             </li>
 
             <li>
-              <strong>Extended Study</strong>
-              General Agricultural Machinery ·
-              Agricultural Information Technology ·
-              Agricultural Internet of Things Applications
+              <span class="en-text"><strong>Extended Study</strong> General Agricultural Machinery · Agricultural Information Technology · Agricultural Internet of Things Applications</span><span class="zh-text" lang="zh-CN"><strong>拓展学习</strong> 农业机械学 · 农业信息技术 · 农业物联网应用</span>
             </li>
-
           </ul>
-
         </div>
-
 
         <!-- Hainan University Logo -->
         <div class="edu-logo-box">
-          <img
-            src="hndx.jpg"
-            alt="Hainan University logo"
-          >
+          <img src="hndx.jpg" alt="Hainan University logo">
         </div>
-
       </article>
-
 
       <!-- CARD 2: Academic Training -->
       <article class="detail-item edu-card">
-
         <div class="edu-text">
-
           <span>
-            Jul – Aug 2026
+            <span class="en-text">Jul – Aug 2026</span><span class="zh-text" lang="zh-CN">2026年7—8月</span>
           </span>
 
           <h2>
-            Academic Training
+            <span class="en-text">Academic Training</span><span class="zh-text" lang="zh-CN">科研训练</span>
           </h2>
 
           <ul class="detail-points">
-
             <li>
-              <strong>Research Internship</strong>
-              Shenzhen Bay Laboratory · Research Intern
+              <span class="en-text"><strong>Research Internship</strong> Shenzhen Bay Laboratory · Research Intern</span><span class="zh-text" lang="zh-CN"><strong>科研实习</strong> 深圳湾实验室 · 科研实习生</span>
             </li>
 
             <li>
-              <strong>Research Focus</strong>
-              Murine norovirus NS3 ·
-              Molecular cloning ·
-              Recombinant protein expression ·
-              Protein purification
+              <span class="en-text"><strong>Research Focus</strong> Murine norovirus NS3 · Molecular cloning · Recombinant protein expression · Protein purification</span><span class="zh-text" lang="zh-CN"><strong>研究方向</strong> 鼠诺如病毒 NS3 · 分子克隆 · 重组蛋白表达 · 蛋白纯化</span>
             </li>
 
             <li>
-              <strong>Academic Program</strong>
-              SMART International Summer School ·
-              Shenzhen Medical Academy of Research and Translation
+              <span class="en-text"><strong>Academic Program</strong> SMART International Summer School · Shenzhen Medical Academy of Research and Translation</span><span class="zh-text" lang="zh-CN"><strong>学术项目</strong> SMART 国际暑期学校 · 深圳医学科学院</span>
             </li>
 
             <li>
-              <strong>Training Focus</strong>
-              Cryo-electron microscopy ·
-              Computational modeling ·
-              Molecular reconstitution ·
-              Quantitative cell biology ·
-              Mitochondrial biology ·
-              Microbial systems biology
+              <span class="en-text"><strong>Training Focus</strong> Cryo-electron microscopy · Computational modeling · Molecular reconstitution · Quantitative cell biology · Mitochondrial biology · Microbial systems biology</span><span class="zh-text" lang="zh-CN"><strong>训练方向</strong> 冷冻电镜 · 计算模拟 · 分子重构 · 定量细胞生物学 · 线粒体生物学 · 微生物系统生物学</span>
             </li>
-
           </ul>
-
         </div>
-
 
         <!-- Shenzhen Bay Laboratory + Shenzhen Medical Academy Logos -->
         <div class="edu-logo-box logo-group">
-
-          <img
-            src="szbll.jpg"
-            alt="Shenzhen Bay Laboratory logo"
-          >
-
-          <img
-            src="szyky.jpg"
-            alt="Shenzhen Medical Academy of Research and Translation logo"
-          >
-
+          <img src="szbll.jpg" alt="Shenzhen Bay Laboratory logo">
+          <img src="szyky.jpg" alt="Shenzhen Medical Academy of Research and Translation logo">
         </div>
-
       </article>
-
 
       <!-- CARD 3: Honors & Patents -->
       <article class="detail-item edu-card">
-
         <div class="edu-text">
-
           <span>
-            Honors
+            <span class="en-text">Honors</span><span class="zh-text" lang="zh-CN">荣誉</span>
           </span>
 
           <h2>
-            Honors & Patents
+            <span class="en-text">Honors &amp; Patents</span><span class="zh-text" lang="zh-CN">荣誉与专利</span>
           </h2>
 
           <ul class="detail-points">
-
             <li>
-              <strong>Scholarships</strong>
-              First-Class Comprehensive Scholarship,
-              Hainan University (2025) ·
-              Second-Class Agricultural Major Scholarship (2025) ·
-              Third-Class Agricultural Major Scholarship (2024)
+              <span class="en-text"><strong>Scholarships</strong> First-Class Comprehensive Scholarship, Hainan University (2025) · Second-Class Agricultural Major Scholarship (2025) · Third-Class Agricultural Major Scholarship (2024)</span><span class="zh-text" lang="zh-CN"><strong>奖学金</strong> 海南大学一等奖学金（2025） · 农学专业二等奖学金（2025） · 农学专业三等奖学金（2024）</span>
             </li>
 
             <li>
-              <strong>Competition</strong>
-              Third Prize,
-              12th Challenge Cup,
-              Hainan Provincial Undergraduate Extracurricular
-              Academic Science and Technology Competition (2025)
+              <span class="en-text"><strong>Competition</strong> Third Prize, 12th Challenge Cup, Hainan Provincial Undergraduate Extracurricular Academic Science and Technology Competition (2025)</span><span class="zh-text" lang="zh-CN"><strong>竞赛</strong> 第十二届“挑战杯”海南省大学生课外学术科技作品竞赛三等奖（2025）</span>
             </li>
 
             <li>
-              <strong>Patent 1</strong>
-              High-throughput microbial activity and antimicrobial
-              susceptibility detection system based on dynamic
-              optical density tracking.
-              Application No. 202620417949.X
+              <span class="en-text"><strong>Patent 1</strong> High-throughput microbial activity and antimicrobial susceptibility detection system based on dynamic optical density tracking. Application No. 202620417949.X</span><span class="zh-text" lang="zh-CN"><strong>专利1</strong> 基于动态光密度追踪的高通量微生物活性及药敏检测系统。申请号：202620417949.X</span>
             </li>
 
             <li>
-              <strong>Patent 2</strong>
-              Two-phase temperature-controlled anti-aggregation
-              system based on composite cooling,
-              graphene heating,
-              and temperature-difference compensation.
-              Application No. 202620418623.9
+              <span class="en-text"><strong>Patent 2</strong> Two-phase temperature-controlled anti-aggregation system based on composite cooling, graphene heating, and temperature-difference compensation. Application No. 202620418623.9</span><span class="zh-text" lang="zh-CN"><strong>专利2</strong> 基于复合冷却、石墨烯加热及温差补偿的双相温控抗聚集系统。申请号：202620418623.9</span>
             </li>
 
             <li>
-              <strong>Patent 3</strong>
-              Microbial single-photon detection system integrating
-              multispectral light sources and a nanophoton counter.
-              Application No. 202620418884.0
+              <span class="en-text"><strong>Patent 3</strong> Microbial single-photon detection system integrating multispectral light sources and a nanophoton counter. Application No. 202620418884.0</span><span class="zh-text" lang="zh-CN"><strong>专利3</strong> 集成多光谱光源与纳米光子计数器的微生物单光子检测系统。申请号：202620418884.0</span>
             </li>
-
           </ul>
-
         </div>
-
-
-     
-
       </article>
-
-
     </section>
-
   </main>
-
 
   <!-- FOOTER -->
   <footer class="site-footer">
-
     <span>
-      Xia Meng · Education & Training
+      <span class="en-text">Xia Meng · Education &amp; Training</span><span class="zh-text" lang="zh-CN">蒙霞 · 教育与科研训练</span>
     </span>
 
     <a href="index.html#contact">
-      Contact
+      <span class="en-text">Contact</span><span class="zh-text" lang="zh-CN">联系</span>
     </a>
-
   </footer>
 
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
 
+      const toggle = document.querySelector("[data-lang-toggle]");
+      let language = "en";
+
+      try {
+        if (localStorage.getItem("siteLanguage") === "zh") {
+          language = "zh";
+        }
+      } catch {
+        // The language button remains available if storage is blocked.
+      }
+
+      const applyLanguage = () => {
+        document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+
+        document.querySelectorAll("[data-lang-option]").forEach((option) => {
+          option.classList.toggle("active", option.dataset.langOption === language);
+        });
+
+        toggle.setAttribute(
+          "aria-label",
+          language === "zh" ? "切换到英文" : "Switch to Chinese"
+        );
+
+        try {
+          localStorage.setItem("siteLanguage", language);
+        } catch {
+          // Language switching still works for this page.
+        }
+      };
+
+      toggle.addEventListener("click", () => {
+        language = language === "zh" ? "en" : "zh";
+        applyLanguage();
+      });
+
+      applyLanguage();
+    });
+  </script>
 </body>
-
 </html>
