@@ -65,6 +65,126 @@
         serif !important;
     }
 
+
+    /* =========================
+       PUBLICATION CARD
+    ========================== */
+
+    .experience-content {
+      min-width: 0;
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .publication-card {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 1.25rem;
+
+      padding: 1.25rem 1.4rem;
+      border-radius: 28px;
+    }
+
+    .publication-icon {
+      width: 52px;
+      height: 52px;
+      flex: 0 0 52px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.34);
+    }
+
+    .publication-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .publication-body {
+      min-width: 0;
+    }
+
+    .publication-kicker {
+      margin: 0 0 0.3rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.66;
+    }
+
+    html[lang="zh-CN"] .publication-kicker {
+      letter-spacing: 0.04em;
+      text-transform: none;
+    }
+
+    .publication-title {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1rem, 1.35vw, 1.28rem);
+      line-height: 1.35;
+    }
+
+    .publication-authors,
+    .publication-meta {
+      margin: 0.2rem 0 0;
+      line-height: 1.5;
+      opacity: 0.8;
+    }
+
+    .publication-authors strong {
+      opacity: 1;
+    }
+
+    .publication-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      white-space: nowrap;
+      text-decoration: none;
+      font-weight: 700;
+
+      padding: 0.72rem 0.95rem;
+      border-radius: 999px;
+
+      background: rgba(255, 255, 255, 0.38);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+    }
+
+    .publication-link svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    @media (max-width: 900px) {
+      .publication-card {
+        grid-template-columns: auto 1fr;
+      }
+
+      .publication-link {
+        grid-column: 2;
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .publication-card {
+        grid-template-columns: 1fr;
+      }
+
+      .publication-icon {
+        width: 46px;
+        height: 46px;
+      }
+
+      .publication-link {
+        grid-column: auto;
+      }
+    }
+
   </style>
 
 </head>
@@ -367,7 +487,60 @@
       </div>
 
 
-      <div class="timeline glass-panel">
+      <div class="experience-content">
+
+        <!-- =========================
+             PUBLICATION
+        ========================== -->
+
+        <article class="publication-card glass-panel">
+
+          <span class="publication-icon" aria-hidden="true">
+            <i data-lucide="book-open"></i>
+          </span>
+
+          <div class="publication-body">
+
+            <p
+              class="publication-kicker"
+              data-i18n="publication.label"
+            >
+              Co-authored Publication
+            </p>
+
+            <h3
+              class="publication-title"
+              data-i18n="publication.title"
+            >
+              Differences in Oropharyngeal Viromes Between Surviving and Deceased Malayan Pangolins in a Rescue Context.
+            </h3>
+
+            <p class="publication-authors">
+              Yi Min, Yanli Zhong, Tingting Jiang, Xiao Wei,
+              <strong>Xia Meng</strong>, et al.
+            </p>
+
+            <p class="publication-meta">
+              <em>Microorganisms</em> · Vol. 14, No. 9 · Article 2043 · 2026
+            </p>
+
+          </div>
+
+          <a
+            class="publication-link"
+            href="https://doi.org/10.3390/microorganisms14092043"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open published paper"
+          >
+            <span data-i18n="publication.link">View paper</span>
+            <i data-lucide="external-link"></i>
+          </a>
+
+        </article>
+
+
+        <div class="timeline glass-panel">
 
 
         <!-- =========================
@@ -624,6 +797,8 @@
         </article>
 
 
+        </div>
+
       </div>
 
     </section>
@@ -879,6 +1054,16 @@
           "Sometimes I’m thinking about life. Sometimes I’m just figuring out where to have fun next.",
 
 
+        "publication.label":
+          "Co-authored Publication",
+
+        "publication.title":
+          "Differences in Oropharyngeal Viromes Between Surviving and Deceased Malayan Pangolins in a Rescue Context.",
+
+        "publication.link":
+          "View paper",
+
+
         "experience.eyebrow":
           "Research Experience",
 
@@ -1054,6 +1239,16 @@
 
         "hero.bubble3":
           "有时候在思考人生，有时候在研究哪里更好玩。",
+
+
+        "publication.label":
+          "合作发表论文",
+
+        "publication.title":
+          "救助情境下存活与死亡马来穿山甲口咽病毒组的差异",
+
+        "publication.link":
+          "查看论文",
 
 
         "experience.eyebrow":
