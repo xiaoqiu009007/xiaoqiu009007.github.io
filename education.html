@@ -15,1273 +15,432 @@
   <link rel="stylesheet" href="styles.css">
 
   <script
-    src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"
-    defer
-  ></script>
+    src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" 
+    defer 
+  ></script> 
+ 
+  <script src="script.js" defer></script> 
+ 
+  <style> 
+    .education-list { 
+      display: grid; 
+      gap: 2rem; 
+    } 
+ 
+    .edu-card { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: stretch; 
+      gap: 2.5rem; 
+    } 
+ 
+    .edu-text { 
+      flex: 1 1 auto; 
+      min-width: 0; 
+    } 
+ 
+    .edu-logo-box { 
+      flex: 0 0 300px; 
+      min-height: 220px; 
+ 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+ 
+      padding: 1.5rem; 
+ 
+      border-radius: 28px; 
+ 
+      background: rgba(255, 255, 255, 0.18); 
+      border: 1px solid rgba(255, 255, 255, 0.35); 
+    } 
+ 
+    .edu-logo-box img { 
+      display: block; 
+      max-width: 100%; 
+      max-height: 160px; 
+      object-fit: contain; 
+    } 
+ 
+    .logo-group { 
+      display: flex; 
+      flex-wrap: wrap; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 1.5rem; 
+    } 
+ 
+    .logo-group img { 
+      max-width: 125px; 
+      max-height: 125px; 
+      object-fit: contain; 
+    } 
+ 
+    .edu-card h2 { 
+      margin-top: 0.5rem; 
+    } 
+ 
+    .detail-points li { 
+      line-height: 1.65; 
+    } 
+ 
+    @media (max-width: 900px) { 
+      .edu-card { 
+        flex-direction: column; 
+      } 
+ 
+      .edu-logo-box { 
+        flex: none; 
+        width: 100%; 
+        min-height: 170px; 
+      } 
+ 
+      .logo-group img { 
+        max-width: 110px; 
+        max-height: 110px; 
+      } 
+    } 
+  </style> 
+</head> 
+ 
+ 
+<body id="top"> 
+ 
+  <!-- Background --> 
+  <div class="atmosphere" aria-hidden="true"> 
+    <span class="dune dune-one"></span> 
+    <span class="dune dune-two"></span> 
+    <span class="dune dune-three"></span> 
+  </div> 
+ 
+ 
+  <!-- HEADER --> 
+  <header class="site-header"> 
+ 
+    <a 
+      class="brand" 
+      href="index.html" 
+      aria-label="Xia Meng homepage" 
+    > 
+      <span class="brand-mark photo-mark"> 
+        <img src="sh.jpg" alt=""> 
+      </span> 
+ 
+      <span> 
+        <strong>Xia Meng</strong> 
+        <small>蒙霞</small> 
+      </span> 
+    </a> 
+ 
+ 
+    <nav class="site-nav" aria-label="Main navigation"> 
+ 
+      <a 
+        href="index.html#experience" 
+        data-i18n="nav.experience" 
+      > 
+        Experience 
+      </a> 
+ 
+      <a 
+        href="index.html#skillkit" 
+        data-i18n="nav.skillkit" 
+      > 
+        Skillkit 
+      </a> 
+ 
+      <a 
+        href="education.html" 
+        data-i18n="nav.education" 
+      > 
+        Education 
+      </a> 
+ 
+      <a 
+        href="highlights.html" 
+        data-i18n="nav.highlights" 
+      > 
+        Highlights 
+      </a> 
+ 
+    </nav> 
+ 
+ 
+    <button 
+      class="lang-switch" 
+      type="button" 
+      data-lang-toggle 
+    > 
+      <span data-lang-option="en">EN</span> 
+      <span data-lang-option="zh">中</span> 
+    </button> 
+ 
+ 
+    <a 
+      class="nav-cta" 
+      href="index.html#contact" 
+      aria-label="Contact Xia Meng" 
+    > 
+      <i data-lucide="send"></i> 
+    </a> 
+ 
+  </header> 
+ 
+ 
+  <!-- MAIN --> 
+ <main class="detail-page">
 
+<section class="page-hero">
 
-  <style>
+<p class="eyebrow" data-i18n="education.eyebrow">
+Education & Training
+</p>
 
-    /* ========================================
-       LANGUAGE-SPECIFIC FONTS
-    ======================================== */
+<h1 data-i18n="education.title">
+Learning and exploring.
+</h1>
 
-    html[lang="en"] body,
-    html[lang="en"] button,
-    html[lang="en"] a,
-    html[lang="en"] h1,
-    html[lang="en"] h2,
-    html[lang="en"] h3,
-    html[lang="en"] h4,
-    html[lang="en"] p,
-    html[lang="en"] li,
-    html[lang="en"] span,
-    html[lang="en"] strong,
-    html[lang="en"] small {
-      font-family:
-        Georgia,
-        "Times New Roman",
-        Times,
-          serif;
+</section>
 
-}
-    /* 保留原页面颜色层级 */
 
-.detail-points strong {
+<section class="detail-list education-list">
 
-  color: #2b2929;
 
-}
+<!-- Undergraduate -->
 
+<article class="detail-item edu-card">
 
-.detail-points span {
+<div class="edu-text">
 
-  color: rgba(60,60,60,0.68);
+<span>
+Sep 2023 – Jul 2027
+</span>
 
-}
+<h2 data-i18n="education.undergraduate.title">
+Undergraduate Education
+</h2>
 
 
-.detail-points li {
+<ul class="detail-points">
 
-  color: rgba(60,60,60,0.68);
 
-}
+<li data-i18n-html="education.undergraduate.university">
+<strong>University</strong>
+Hainan University
+</li>
 
 
-.edu-card h2 {
+<li data-i18n-html="education.undergraduate.degree">
+<strong>Degree</strong>
+Bachelor's Degree in Agriculture Education
+</li>
 
-  color:#1e1c1c;
 
-}
+<li data-i18n-html="education.undergraduate.performance">
+<strong>Academic Performance</strong>
+Average Score: 87.65 / 100 · Top 7.14%
+</li>
 
 
-.edu-card > span {
+<li data-i18n-html="education.undergraduate.coursework">
+<strong>Core Coursework</strong>
+Genetics · Plant Physiology and Biochemistry · Microbiology
+</li>
 
-  color:#876f67;
 
-}
+<li data-i18n-html="education.undergraduate.study">
+<strong>Extended Study</strong>
+General Agricultural Machinery · Agricultural Information Technology · Agricultural Internet of Things Applications
+</li>
 
 
-    html[lang="zh-CN"] body,
-    html[lang="zh-CN"] button,
-    html[lang="zh-CN"] a,
-    html[lang="zh-CN"] h1,
-    html[lang="zh-CN"] h2,
-    html[lang="zh-CN"] h3,
-    html[lang="zh-CN"] h4,
-    html[lang="zh-CN"] p,
-    html[lang="zh-CN"] li,
-    html[lang="zh-CN"] span,
-    html[lang="zh-CN"] strong,
-    html[lang="zh-CN"] small {
-      font-family:
-        "Songti SC",
-        "STSong",
-        "SimSun",
-        "宋体",  serif;
+</ul>
 
-}
-        /* 保留原页面颜色层级 */
+</div>
 
-.detail-points strong {
 
-  color: #2b2929;
+<div class="edu-logo-box">
 
-}
+<img src="hndx.jpg"
+alt="Hainan University logo">
 
+</div>
 
-.detail-points span {
 
-  color: rgba(60,60,60,0.68);
+</article>
 
-}
 
 
-.detail-points li {
+<!-- Academic Training -->
 
-  color: rgba(60,60,60,0.68);
+<article class="detail-item edu-card">
 
-}
 
+<div class="edu-text">
 
-.edu-card h2 {
 
-  color:#1e1c1c;
+<span>
+Jul – Aug 2026
+</span>
 
-}
 
+<h2 data-i18n="education.training.title">
+Academic Training
+</h2>
 
-.edu-card > span {
 
-  color:#876f67;
+<ul class="detail-points">
 
-}
 
+<li data-i18n-html="education.training.internship">
 
-    /* ========================================
-       EDUCATION PAGE
-    ======================================== */
+<strong>Research Internship</strong>
+Shenzhen Bay Laboratory · Research Intern
 
-    .education-list {
-      display: grid;
-      gap: 2rem;
-    }
+</li>
 
 
-    .edu-card {
-      display: flex;
-      justify-content: space-between;
-      align-items: stretch;
-      gap: 2.5rem;
-    }
+<li data-i18n-html="education.training.focus">
 
+<strong>Research Focus</strong>
+Murine norovirus NS3 · Molecular cloning · Recombinant protein expression · Protein purification
 
-    .edu-text {
-      flex: 1 1 auto;
-      min-width: 0;
-    }
+</li>
 
 
-    .edu-logo-box {
-      flex: 0 0 300px;
-      min-height: 220px;
+<li data-i18n-html="education.training.program">
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+<strong>Academic Program</strong>
+SMART International Summer School · Shenzhen Medical Academy of Research and Translation
 
-      padding: 1.5rem;
+</li>
 
-      border-radius: 28px;
 
-      background: rgba(255, 255, 255, 0.18);
+<li data-i18n-html="education.training.skills">
 
-      border:
-        1px solid rgba(255, 255, 255, 0.35);
-    }
+<strong>Training Focus</strong>
+Cryo-electron microscopy · Computational modeling · Molecular reconstitution · Quantitative cell biology · Mitochondrial biology · Microbial systems biology
 
+</li>
 
-    .edu-logo-box img {
-      display: block;
 
-      max-width: 100%;
-      max-height: 160px;
+</ul>
 
-      object-fit: contain;
-    }
 
+</div>
 
-    .logo-group {
-      display: flex;
-      flex-wrap: wrap;
 
-      align-items: center;
-      justify-content: center;
+<div class="edu-logo-box logo-group">
 
-      gap: 1.5rem;
-    }
 
+<img src="szbll.jpg"
+alt="Shenzhen Bay Laboratory logo">
 
-    .logo-group img {
-      max-width: 125px;
-      max-height: 125px;
 
-      object-fit: contain;
-    }
+<img src="szyky.jpg"
+alt="Shenzhen Medical Academy logo">
 
 
-    .edu-card h2 {
-      margin-top: 0.5rem;
-    }
+</div>
 
 
-    .detail-points li {
-      line-height: 1.65;
-    }
+</article>
 
 
-    .detail-points strong {
-      margin-right: 0.35rem;
-    }
 
 
-    @media (max-width: 900px) {
+<!-- Honors -->
 
-      .edu-card {
-        flex-direction: column;
-      }
 
+<article class="detail-item edu-card">
 
-      .edu-logo-box {
-        flex: none;
 
-        width: 100%;
-        min-height: 170px;
-      }
+<div class="edu-text">
 
 
-      .logo-group img {
-        max-width: 110px;
-        max-height: 110px;
-      }
+<span data-i18n="education.honors.label">
+Honors
+</span>
 
-    }
 
-  </style>
+<h2 data-i18n="education.honors.title">
+Honors & Patents
+</h2>
 
-</head>
 
+<ul class="detail-points">
 
-<body id="top">
 
+<li data-i18n-html="education.honors.scholarship">
 
-  <!-- ========================================
-       BACKGROUND
-  ======================================== -->
+<strong>Scholarships</strong>
+First-Class Comprehensive Scholarship, Hainan University (2025)
 
-  <div
-    class="atmosphere"
-    aria-hidden="true"
-  >
+</li>
 
-    <span class="dune dune-one"></span>
-    <span class="dune dune-two"></span>
-    <span class="dune dune-three"></span>
 
-  </div>
+<li data-i18n-html="education.honors.competition">
 
+<strong>Competition</strong>
+Third Prize, 12th Challenge Cup, Hainan Provincial Undergraduate Extracurricular Academic Science and Technology Competition (2025)
 
+</li>
 
-  <!-- ========================================
-       HEADER
-  ======================================== -->
 
-  <header class="site-header">
+<li data-i18n-html="education.honors.patent1">
 
+<strong>Patent 1</strong>
+High-throughput microbial activity and antimicrobial susceptibility detection system based on dynamic optical density tracking.
 
-    <a
-      class="brand"
-      href="index.html"
-      aria-label="Xia Meng homepage"
-    >
+</li>
 
-      <span class="brand-mark photo-mark">
 
-        <img
-          src="sh.jpg"
-          alt=""
-        >
+<li data-i18n-html="education.honors.patent2">
 
-      </span>
+<strong>Patent 2</strong>
+Two-phase temperature-controlled anti-aggregation system based on composite cooling, graphene heating, and temperature-difference compensation.
 
+</li>
 
-      <span>
 
-        <strong>
-          Xia Meng
-        </strong>
+<li data-i18n-html="education.honors.patent3">
 
-        <small>
-          蒙霞
-        </small>
+<strong>Patent 3</strong>
+Microbial single-photon detection system integrating multispectral light sources and a nanophoton counter.
 
-      </span>
+</li>
 
-    </a>
 
+</ul>
 
 
-    <nav
-      class="site-nav"
-      aria-label="Main navigation"
-    >
+</div>
 
 
-      <a
-        href="index.html#experience"
-        data-i18n="nav.experience"
-      >
-        Experience
-      </a>
+</article>
 
 
-      <a
-        href="index.html#skillkit"
-        data-i18n="nav.skillkit"
-      >
-        Skillkit
-      </a>
 
+</section>
 
-      <a
-        href="education.html"
-        data-i18n="nav.education"
-      >
-        Education
-      </a>
 
-
-      <a
-        href="highlights.html"
-        data-i18n="nav.highlights"
-      >
-        Highlights
-      </a>
-
-
-    </nav>
-
-
-
-    <button
-      class="lang-switch"
-      type="button"
-      data-lang-toggle
-      aria-label="Switch language"
-    >
-
-      <span data-lang-option="en">
-        EN
-      </span>
-
-      <span data-lang-option="zh">
-        中
-      </span>
-
-    </button>
-
-
-
-    <a
-      class="nav-cta"
-      href="index.html#contact"
-      aria-label="Contact Xia Meng"
-    >
-
-      <i data-lucide="send"></i>
-
-    </a>
-
-
-  </header>
-
-
-
-  <!-- ========================================
-       MAIN
-  ======================================== -->
-
-  <main class="detail-page">
-
-
-    <!-- ========================================
-         PAGE INTRO
-    ======================================== -->
-
-    <section class="page-hero">
-
-
-      <p
-        class="eyebrow"
-        data-i18n="education.eyebrow"
-      >
-        Education & Training
-      </p>
-
-
-      <h1 data-i18n="education.title">
-        Learning and exploring.
-      </h1>
-
-
-    </section>
-
-
-
-    <!-- ========================================
-         EDUCATION CARDS
-    ======================================== -->
-
-    <section class="detail-list education-list">
-
-
-
-      <!-- ========================================
-           CARD 1
-           UNDERGRADUATE EDUCATION
-      ======================================== -->
-
-      <article class="detail-item edu-card">
-
-
-        <div class="edu-text">
-
-
-          <span data-i18n="undergraduate.date">
-            Sep 2023 – Jul 2027
-          </span>
-
-
-          <h2 data-i18n="undergraduate.title">
-            Undergraduate Education
-          </h2>
-
-
-          <ul class="detail-points">
-
-
-            <li>
-
-              <strong data-i18n="undergraduate.university.label">
-                University
-              </strong>
-
-              <span data-i18n="undergraduate.university.value">
-                Hainan University
-              </span>
-
-            </li>
-
-
-            <li>
-
-              <strong data-i18n="undergraduate.degree.label">
-                Degree
-              </strong>
-
-              <span data-i18n="undergraduate.degree.value">
-                Bachelor's Degree in Agriculture Education
-              </span>
-
-            </li>
-
-
-            <li>
-
-              <strong data-i18n="undergraduate.performance.label">
-                Academic Performance
-              </strong>
-
-              <span data-i18n="undergraduate.performance.value">
-                Average Score: 87.65 / 100 · Top 7.14%
-              </span>
-
-            </li>
-
-
-            <li>
-
-              <strong data-i18n="undergraduate.coursework.label">
-                Core Coursework
-              </strong>
-
-              <span data-i18n="undergraduate.coursework.value">
-                Genetics · Plant Physiology and Biochemistry · Microbiology
-              </span>
-
-            </li>
-
-
-            <li>
-
-              <strong data-i18n="undergraduate.extended.label">
-                Extended Study
-              </strong>
-
-              <span data-i18n="undergraduate.extended.value">
-                General Agricultural Machinery · Agricultural Information Technology · Agricultural Internet of Things Applications
-              </span>
-
-            </li>
-
-
-          </ul>
-
-
-        </div>
-
-
-
-        <!-- Hainan University Logo -->
-
-        <div class="edu-logo-box">
-
-          <img
-            src="hndx.jpg"
-            alt="Hainan University logo"
-          >
-
-        </div>
-
-
-      </article>
-
-
-
-      <!-- ========================================
-           CARD 2
-           ACADEMIC TRAINING
-      ======================================== -->
-
-      <article class="detail-item edu-card">
-
-
-        <div class="edu-text">
-
-
-          <span data-i18n="training.date">
-            Jul – Aug 2026
-          </span>
-
-
-          <h2 data-i18n="training.title">
-            Academic Training
-          </h2>
-
-
-          <ul class="detail-points">
-
-
-            <li>
-
-              <strong data-i18n="training.internship.label">
-                Research Internship
-              </strong>
-
-              <span data-i18n="training.internship.value">
-                Shenzhen Bay Laboratory · Research Intern
-              </span>
-
-            </li>
-
-
-            <li>
-
-              <strong data-i18n="training.research.label">
-                Research Focus
-              </strong>
-
-              <span data-i18n="training.research.value">
-                Murine norovirus NS3 · Molecular cloning · Recombinant protein expression · Protein purification
-              </span>
-
-            </li>
-
-
-            <li>
-
-              <strong data-i18n="training.program.label">
-                Academic Program
-              </strong>
-
-              <span data-i18n="training.program.value">
-                SMART International Summer School · Shenzhen Medical Academy of Research and Translation
-              </span>
-
-            </li>
-
-
-            <li>
-
-              <strong data-i18n="training.focus.label">
-                Training Focus
-              </strong>
-
-              <span data-i18n="training.focus.value">
-                Cryo-electron microscopy · Computational modeling · Molecular reconstitution · Quantitative cell biology · Mitochondrial biology · Microbial systems biology
-              </span>
-
-            </li>
-
-
-          </ul>
-
-
-        </div>
-
-
-
-        <!-- Shenzhen Bay Laboratory + Shenzhen Medical Academy Logos -->
-
-        <div class="edu-logo-box logo-group">
-
-
-          <img
-            src="szbll.jpg"
-            alt="Shenzhen Bay Laboratory logo"
-          >
-
-
-          <img
-            src="szyky.jpg"
-            alt="Shenzhen Medical Academy of Research and Translation logo"
-          >
-
-
-        </div>
-
-
-      </article>
-
-
-
-      <!-- ========================================
-           CARD 3
-           HONORS & PATENTS
-      ======================================== -->
-
-      <article class="detail-item edu-card">
-
-
-        <div class="edu-text">
-
-
-          <span data-i18n="honors.label">
-            Honors
-          </span>
-
-
-          <h2 data-i18n="honors.title">
-            Honors & Patents
-          </h2>
-
-
-          <ul class="detail-points">
-
-
-            <li>
-
-              <strong data-i18n="honors.scholarships.label">
-                Scholarships
-              </strong>
-
-              <span data-i18n="honors.scholarships.value">
-                First-Class Comprehensive Scholarship, Hainan University (2025) · Second-Class Agricultural Major Scholarship (2025) · Third-Class Agricultural Major Scholarship (2024)
-              </span>
-
-            </li>
-
-
-            <li>
-
-              <strong data-i18n="honors.competition.label">
-                Competition
-              </strong>
-
-              <span data-i18n="honors.competition.value">
-                Third Prize, 12th Challenge Cup, Hainan Provincial Undergraduate Extracurricular Academic Science and Technology Competition (2025)
-              </span>
-
-            </li>
-
-
-            <li>
-
-              <strong data-i18n="honors.patent1.label">
-                Patent 1
-              </strong>
-
-              <span data-i18n="honors.patent1.value">
-                High-throughput microbial activity and antimicrobial susceptibility detection system based on dynamic optical density tracking. Application No. 202620417949.X
-              </span>
-
-            </li>
-
-
-            <li>
-
-              <strong data-i18n="honors.patent2.label">
-                Patent 2
-              </strong>
-
-              <span data-i18n="honors.patent2.value">
-                Two-phase temperature-controlled anti-aggregation system based on composite cooling, graphene heating, and temperature-difference compensation. Application No. 202620418623.9
-              </span>
-
-            </li>
-
-
-            <li>
-
-              <strong data-i18n="honors.patent3.label">
-                Patent 3
-              </strong>
-
-              <span data-i18n="honors.patent3.value">
-                Microbial single-photon detection system integrating multispectral light sources and a nanophoton counter. Application No. 202620418884.0
-              </span>
-
-            </li>
-
-
-          </ul>
-
-
-        </div>
-
-
-      </article>
-
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- ========================================
-       FOOTER
-  ======================================== -->
-
-  <footer class="site-footer">
-
-
-    <span data-i18n="footer.text">
-      Xia Meng · Education & Training
-    </span>
-
-
-    <a
-      href="index.html#contact"
-      data-i18n="footer.contact"
-    >
-      Contact
-    </a>
-
-
-  </footer>
-
-
-
-  <!-- ========================================
-       LANGUAGE SYSTEM
-  ======================================== -->
-
-  <script>
-
-
-    const translations = {
-
-
-      /* ========================================
-         ENGLISH
-      ======================================== */
-
-      en: {
-
-
-        /* Navigation */
-
-        "nav.experience":
-          "Experience",
-
-        "nav.skillkit":
-          "Skillkit",
-
-        "nav.education":
-          "Education",
-
-        "nav.highlights":
-          "Highlights",
-
-
-
-        /* Page */
-
-        "education.eyebrow":
-          "Education & Training",
-
-        "education.title":
-          "Learning and exploring.",
-
-
-
-        /* Undergraduate */
-
-        "undergraduate.date":
-          "Sep 2023 – Jul 2027",
-
-        "undergraduate.title":
-          "Undergraduate Education",
-
-        "undergraduate.university.label":
-          "University",
-
-        "undergraduate.university.value":
-          "Hainan University",
-
-        "undergraduate.degree.label":
-          "Degree",
-
-        "undergraduate.degree.value":
-          "Bachelor's Degree in Agriculture Education",
-
-        "undergraduate.performance.label":
-          "Academic Performance",
-
-        "undergraduate.performance.value":
-          "Average Score: 87.65 / 100 · Top 7.14%",
-
-        "undergraduate.coursework.label":
-          "Core Coursework",
-
-        "undergraduate.coursework.value":
-          "Genetics · Plant Physiology and Biochemistry · Microbiology",
-
-        "undergraduate.extended.label":
-          "Extended Study",
-
-        "undergraduate.extended.value":
-          "General Agricultural Machinery · Agricultural Information Technology · Agricultural Internet of Things Applications",
-
-
-
-        /* Academic Training */
-
-        "training.date":
-          "Jul – Aug 2026",
-
-        "training.title":
-          "Academic Training",
-
-        "training.internship.label":
-          "Research Internship",
-
-        "training.internship.value":
-          "Shenzhen Bay Laboratory · Research Intern",
-
-        "training.research.label":
-          "Research Focus",
-
-        "training.research.value":
-          "Murine norovirus NS3 · Molecular cloning · Recombinant protein expression · Protein purification",
-
-        "training.program.label":
-          "Academic Program",
-
-        "training.program.value":
-          "SMART International Summer School · Shenzhen Medical Academy of Research and Translation",
-
-        "training.focus.label":
-          "Training Focus",
-
-        "training.focus.value":
-          "Cryo-electron microscopy · Computational modeling · Molecular reconstitution · Quantitative cell biology · Mitochondrial biology · Microbial systems biology",
-
-
-
-        /* Honors & Patents */
-
-        "honors.label":
-          "Honors",
-
-        "honors.title":
-          "Honors & Patents",
-
-        "honors.scholarships.label":
-          "Scholarships",
-
-        "honors.scholarships.value":
-          "First-Class Comprehensive Scholarship, Hainan University (2025) · Second-Class Agricultural Major Scholarship (2025) · Third-Class Agricultural Major Scholarship (2024)",
-
-        "honors.competition.label":
-          "Competition",
-
-        "honors.competition.value":
-          "Third Prize, 12th Challenge Cup, Hainan Provincial Undergraduate Extracurricular Academic Science and Technology Competition (2025)",
-
-        "honors.patent1.label":
-          "Patent 1",
-
-        "honors.patent1.value":
-          "High-throughput microbial activity and antimicrobial susceptibility detection system based on dynamic optical density tracking. Application No. 202620417949.X",
-
-        "honors.patent2.label":
-          "Patent 2",
-
-        "honors.patent2.value":
-          "Two-phase temperature-controlled anti-aggregation system based on composite cooling, graphene heating, and temperature-difference compensation. Application No. 202620418623.9",
-
-        "honors.patent3.label":
-          "Patent 3",
-
-        "honors.patent3.value":
-          "Microbial single-photon detection system integrating multispectral light sources and a nanophoton counter. Application No. 202620418884.0",
-
-
-
-        /* Footer */
-
-        "footer.text":
-          "Xia Meng · Education & Training",
-
-        "footer.contact":
-          "Contact"
-
-      },
-
-
-
-      /* ========================================
-         CHINESE
-      ======================================== */
-
-      zh: {
-
-
-        /* Navigation */
-
-        "nav.experience":
-          "经历",
-
-        "nav.skillkit":
-          "技能",
-
-        "nav.education":
-          "教育",
-
-        "nav.highlights":
-          "亮点",
-
-
-
-        /* Page */
-
-        "education.eyebrow":
-          "教育与学术训练",
-
-        "education.title":
-          "学习，也探索。",
-
-
-
-        /* Undergraduate */
-
-        "undergraduate.date":
-          "2023年9月 – 2027年7月",
-
-        "undergraduate.title":
-          "本科教育",
-
-        "undergraduate.university.label":
-          "学校",
-
-        "undergraduate.university.value":
-          "海南大学",
-
-        "undergraduate.degree.label":
-          "学位",
-
-        "undergraduate.degree.value":
-          "农业教育学士学位",
-
-        "undergraduate.performance.label":
-          "学业表现",
-
-        "undergraduate.performance.value":
-          "平均成绩：87.65 / 100 · 专业排名前 7.14%",
-
-        "undergraduate.coursework.label":
-          "核心课程",
-
-        "undergraduate.coursework.value":
-          "遗传学 · 植物生理学与生物化学 · 微生物学",
-
-        "undergraduate.extended.label":
-          "拓展学习",
-
-        "undergraduate.extended.value":
-          "通用农业机械 · 农业信息技术 · 农业物联网应用",
-
-
-
-        /* Academic Training */
-
-        "training.date":
-          "2026年7月 – 8月",
-
-        "training.title":
-          "学术训练",
-
-        "training.internship.label":
-          "科研实习",
-
-        "training.internship.value":
-          "深圳湾实验室 · 科研实习生",
-
-        "training.research.label":
-          "研究方向",
-
-        "training.research.value":
-          "鼠诺如病毒 NS3 · 分子克隆 · 重组蛋白表达 · 蛋白纯化",
-
-        "training.program.label":
-          "学术项目",
-
-        "training.program.value":
-          "SMART 国际暑期学校 · 深圳医学科学院",
-
-        "training.focus.label":
-          "训练内容",
-
-        "training.focus.value":
-          "冷冻电镜 · 计算建模 · 分子重构 · 定量细胞生物学 · 线粒体生物学 · 微生物系统生物学",
-
-
-
-        /* Honors & Patents */
-
-        "honors.label":
-          "荣誉",
-
-        "honors.title":
-          "荣誉与专利",
-
-        "honors.scholarships.label":
-          "奖学金",
-
-        "honors.scholarships.value":
-          "海南大学一等奖学金（2025） · 农科专业二等奖学金（2025） · 农科专业三等奖学金（2024）",
-
-        "honors.competition.label":
-          "竞赛",
-
-        "honors.competition.value":
-          "第十二届“挑战杯”海南省大学生课外学术科技作品竞赛三等奖（2025）",
-
-        "honors.patent1.label":
-          "专利 1",
-
-        "honors.patent1.value":
-          "基于动态光密度追踪的高通量微生物活性及抗菌药物敏感性检测系统。申请号：202620417949.X",
-
-        "honors.patent2.label":
-          "专利 2",
-
-        "honors.patent2.value":
-          "基于复合制冷、石墨烯加热及温差补偿的双相温控防聚集系统。申请号：202620418623.9",
-
-        "honors.patent3.label":
-          "专利 3",
-
-        "honors.patent3.value":
-          "集成多光谱光源与纳米光子计数器的微生物单光子检测系统。申请号：202620418884.0",
-
-
-
-        /* Footer */
-
-        "footer.text":
-          "蒙霞 · 教育与学术训练",
-
-        "footer.contact":
-          "联系"
-
-      }
-
-    };
-
-
-
-    /* ========================================
-       LANGUAGE FUNCTIONS
-    ======================================== */
-
-    function currentLanguage() {
-
-      return document.documentElement.lang
-        .toLowerCase()
-        .startsWith("zh")
-        ? "zh"
-        : "en";
-
-    }
-
-
-
-    function applyLanguage(language) {
-
-
-      const selectedLanguage =
-        language === "zh"
-          ? "zh"
-          : "en";
-
-
-      /* Change HTML language + font */
-
-      document.documentElement.lang =
-        selectedLanguage === "zh"
-          ? "zh-CN"
-          : "en";
-
-
-      /* Translate text */
-
-      document
-        .querySelectorAll("[data-i18n]")
-        .forEach((element) => {
-
-
-          const key =
-            element.dataset.i18n;
-
-
-          const translatedText =
-            translations[selectedLanguage][key];
-
-
-          if (translatedText !== undefined) {
-
-            element.textContent =
-              translatedText;
-
-          }
-
-
-        });
-
-
-
-      /* Language button */
-
-      document
-        .querySelectorAll("[data-lang-option]")
-        .forEach((option) => {
-
-
-          const isActive =
-            option.dataset.langOption === selectedLanguage;
-
-
-          option.classList.toggle(
-            "active",
-            isActive
-          );
-
-
-        });
-
-
-
-      /* Browser title */
-
-      document.title =
-        selectedLanguage === "zh"
-          ? "教育 | 蒙霞"
-          : "Education | Xia Meng";
-
-
-
-      /* Remember language */
-
-      localStorage.setItem(
-        "preferredLanguage",
-        selectedLanguage
-      );
-
-
-    }
-
-
-
-    /* ========================================
-       INITIALIZE
-    ======================================== */
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      () => {
-
-
-        const toggle =
-          document.querySelector(
-            "[data-lang-toggle]"
-          );
-
-
-        const savedLanguage =
-          localStorage.getItem(
-            "preferredLanguage"
-          );
-
-
-        const initialLanguage =
-          savedLanguage === "zh"
-            ? "zh"
-            : "en";
-
-
-        applyLanguage(
-          initialLanguage
-        );
-
-
-
-        if (toggle) {
-
-
-          toggle.addEventListener(
-            "click",
-            () => {
-
-
-              const nextLanguage =
-                currentLanguage() === "en"
-                  ? "zh"
-                  : "en";
-
-
-              applyLanguage(
-                nextLanguage
-              );
-
-
-            }
-          );
-
-
-        }
-
-
-
-        /* Lucide icons */
-
-        if (window.lucide) {
-
-          window.lucide.createIcons();
-
-        }
-
-
-      }
-    );
-
-
-  </script>
-
-
-</body>
-
-</html>
+</main>
+ 
+ 
+  <!-- FOOTER --> 
+  <footer class="site-footer"> 
+ 
+    <span> 
+      Xia Meng · Education & Training 
+    </span> 
+ 
+    <a href="index.html#contact"> 
+      Contact 
+    </a> 
+ 
+  </footer> 
+ 
+ 
+</body> 
+ 
+</html> 
