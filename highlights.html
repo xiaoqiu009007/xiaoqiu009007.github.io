@@ -19,11 +19,50 @@
     defer
   ></script>
 
-  <script src="script.js" defer></script>
-
-
-  <!-- Highlights page styles -->
   <style>
+    /* =========================
+       LANGUAGE-SPECIFIC FONTS
+    ========================== */
+
+    html[lang="en"] body,
+    html[lang="en"] button,
+    html[lang="en"] a,
+    html[lang="en"] h1,
+    html[lang="en"] h2,
+    html[lang="en"] h3,
+    html[lang="en"] h4,
+    html[lang="en"] p,
+    html[lang="en"] li,
+    html[lang="en"] span,
+    html[lang="en"] strong,
+    html[lang="en"] small {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        Times,
+        serif !important;
+    }
+
+    html[lang="zh-CN"] body,
+    html[lang="zh-CN"] button,
+    html[lang="zh-CN"] a,
+    html[lang="zh-CN"] h1,
+    html[lang="zh-CN"] h2,
+    html[lang="zh-CN"] h3,
+    html[lang="zh-CN"] h4,
+    html[lang="zh-CN"] p,
+    html[lang="zh-CN"] li,
+    html[lang="zh-CN"] span,
+    html[lang="zh-CN"] strong,
+    html[lang="zh-CN"] small {
+      font-family:
+        "Songti SC",
+        "STSong",
+        "SimSun",
+        "宋体",
+        serif !important;
+    }
+
 
     /* =========================
        PAGE
@@ -81,7 +120,6 @@
       -webkit-backdrop-filter: blur(22px);
     }
 
-    /* Research occupies the whole top row */
     .research-card {
       grid-column: 1 / -1;
     }
@@ -113,6 +151,12 @@
       line-height: 1.55;
     }
 
+    .highlight-copy {
+      margin-top: -0.5rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.55;
+    }
+
 
     /* =========================
        CAROUSEL
@@ -132,17 +176,13 @@
         rgba(255, 255, 255, 0.20);
     }
 
-
-    /* Research is wider */
     .research-card .carousel-frame {
       height: 520px;
     }
 
-    /* Bottom two are slightly smaller */
     .small-highlight .carousel-frame {
       height: 460px;
     }
-
 
     .carousel-slide {
       display: none;
@@ -154,16 +194,12 @@
       display: block;
     }
 
-
     .carousel-slide img {
       width: 100%;
       height: 100%;
       display: block;
     }
 
-
-    /* Research includes screenshots/charts,
-       so contain avoids cutting them off */
     .research-card .carousel-slide img {
       object-fit: contain;
 
@@ -171,8 +207,6 @@
         rgba(255, 255, 255, 0.22);
     }
 
-
-    /* Curiosity & Life work better as photo cards */
     .small-highlight .carousel-slide img {
       object-fit: cover;
     }
@@ -427,6 +461,7 @@
       class="lang-switch"
       type="button"
       data-lang-toggle
+      aria-label="Switch language"
     >
       <span data-lang-option="en">EN</span>
       <span data-lang-option="zh">中</span>
@@ -458,11 +493,14 @@
 
     <section class="highlights-intro">
 
-      <p class="eyebrow">
+      <p
+        class="eyebrow"
+        data-i18n="highlights.eyebrow"
+      >
         Personal Highlights
       </p>
 
-      <h1>
+      <h1 data-i18n="highlights.title">
         Research, curiosity,
         and life beyond the lab.
       </h1>
@@ -494,13 +532,13 @@
               01
             </p>
 
-            <h2>
+            <h2 data-i18n="research.title">
               Research
             </h2>
           </div>
 
 
-          <p>
+          <p data-i18n="research.copy">
             From molecular experiments to evolutionary analysis,
             I enjoy turning biological questions into testable ideas.
           </p>
@@ -519,7 +557,8 @@
 
             <div
               class="carousel-slide active"
-              data-caption="In the lab — where questions start becoming experiments."
+              data-caption-en="In the lab — where questions start becoming experiments."
+              data-caption-zh="在实验室里，问题开始一步步变成可以验证的实验。"
             >
               <img
                 src="r1.jpg"
@@ -532,7 +571,8 @@
 
             <div
               class="carousel-slide"
-              data-caption="From sequences to patterns — part of the computational side of biological research."
+              data-caption-en="From sequences to patterns — part of the computational side of biological research."
+              data-caption-zh="从序列到模式，这是生命科学研究中计算分析的一面。"
             >
               <img
                 src="r2.png"
@@ -545,7 +585,8 @@
 
             <div
               class="carousel-slide"
-              data-caption="Phylogenetic analysis — tracing relationships hidden in sequence data."
+              data-caption-en="Phylogenetic analysis — tracing relationships hidden in sequence data."
+              data-caption-zh="系统发育分析：从序列数据中追踪隐藏的演化关系。"
             >
               <img
                 src="r3.png"
@@ -558,7 +599,8 @@
 
             <div
               class="carousel-slide"
-              data-caption="The everyday side of research: experiments, notes, samples, and repetition."
+              data-caption-en="The everyday side of research: experiments, notes, samples, and repetition."
+              data-caption-zh="科研的日常：实验、记录、样本，以及一遍又一遍的重复。"
             >
               <img
                 src="r4.jpg"
@@ -571,7 +613,8 @@
 
             <div
               class="carousel-slide"
-              data-caption="A result is only interesting after you have checked it twice."
+              data-caption-en="A result is only interesting after you have checked it twice."
+              data-caption-zh="一个结果，往往要在反复确认之后才真正变得有意思。"
             >
               <img
                 src="r4.png"
@@ -584,7 +627,8 @@
 
             <div
               class="carousel-slide"
-              data-caption="Research is also about stepping back, discussing ideas, and seeing the bigger picture."
+              data-caption-en="Research also grows through new environments, new conversations, and new perspectives."
+              data-caption-zh="科研也会在新的环境、新的交流和新的视角中不断生长。"
             >
               <img
                 src="r5.jpg"
@@ -648,7 +692,7 @@
               02
             </p>
 
-            <h2>
+            <h2 data-i18n="curiosity.title">
               Curiosity
             </h2>
           </div>
@@ -656,7 +700,10 @@
         </div>
 
 
-        <p style="margin-top: -0.5rem; margin-bottom: 1.25rem; line-height: 1.55;">
+        <p
+          class="highlight-copy"
+          data-i18n="curiosity.copy"
+        >
           Unknown things are always interesting —
           sometimes they become questions,
           sometimes they become stories.
@@ -674,7 +721,8 @@
 
             <div
               class="carousel-slide active"
-              data-caption="Sometimes curiosity starts under a microscope."
+              data-caption-en="Sometimes curiosity starts under a microscope."
+              data-caption-zh="有时候，好奇心从显微镜下开始。"
             >
               <img
                 src="c1.jpg"
@@ -687,7 +735,8 @@
 
             <div
               class="carousel-slide"
-              data-caption="Sometimes it starts by looking up, looking around, and noticing something new."
+              data-caption-en="Sometimes it starts by looking up, looking around, and noticing something new."
+              data-caption-zh="有时候，它从抬头看看、四处走走，以及发现一点新鲜事开始。"
             >
               <img
                 src="c2.jpg"
@@ -700,7 +749,8 @@
 
             <div
               class="carousel-slide"
-              data-caption="Sometimes the answer is hiding somewhere inside a terminal window."
+              data-caption-en="Sometimes the answer is hiding somewhere inside a terminal window."
+              data-caption-zh="有时候，答案就藏在终端窗口的一行行代码里。"
             >
               <img
                 src="c3.png"
@@ -713,7 +763,8 @@
 
             <div
               class="carousel-slide"
-              data-caption="And sometimes the best ideas begin as very messy notes."
+              data-caption-en="And sometimes the best ideas begin as very messy notes."
+              data-caption-zh="还有时候，最好的想法会从一页看起来有点乱的笔记开始。"
             >
               <img
                 src="c4.jpg"
@@ -777,7 +828,7 @@
               03
             </p>
 
-            <h2>
+            <h2 data-i18n="life.title">
               Life
             </h2>
           </div>
@@ -785,7 +836,10 @@
         </div>
 
 
-        <p style="margin-top: -0.5rem; margin-bottom: 1.25rem; line-height: 1.55;">
+        <p
+          class="highlight-copy"
+          data-i18n="life.copy"
+        >
           Sometimes I’m thinking about life.
           Sometimes I’m just figuring out
           where to have fun next.
@@ -803,7 +857,8 @@
 
             <div
               class="carousel-slide active"
-              data-caption="Serious about science. Slightly less serious when there is a good photo opportunity."
+              data-caption-en="Serious about science. Slightly less serious when there is a good photo opportunity."
+              data-caption-zh="对科研很认真，遇到适合拍照的地方时可能会稍微没那么认真。"
             >
               <img
                 src="l1.jpg"
@@ -816,7 +871,8 @@
 
             <div
               class="carousel-slide"
-              data-caption="A small milestone — and a good reason to smile."
+              data-caption-en="A small milestone — and a good reason to smile."
+              data-caption-zh="一个小小的里程碑，也是一件值得开心的事。"
             >
               <img
                 src="l2.jpg"
@@ -829,7 +885,8 @@
 
             <div
               class="carousel-slide"
-              data-caption="New places, new views, and occasionally new ways to get cold."
+              data-caption-en="New places, new views, and occasionally new ways to get cold."
+              data-caption-zh="新的地方、新的风景，偶尔也解锁一些新的挨冻方式。"
             >
               <img
                 src="l3.jpg"
@@ -842,7 +899,8 @@
 
             <div
               class="carousel-slide"
-              data-caption="Collecting moments, not just deadlines."
+              data-caption-en="Collecting moments, not just deadlines."
+              data-caption-zh="除了截止日期，也想认真收藏生活里的每一个瞬间。"
             >
               <img
                 src="l4.jpg"
@@ -901,11 +959,14 @@
 
   <footer class="site-footer">
 
-    <span>
+    <span data-i18n="footer.text">
       Xia Meng · Research · Curiosity · Life
     </span>
 
-    <a href="index.html#contact">
+    <a
+      href="index.html#contact"
+      data-i18n="footer.contact"
+    >
       Contact
     </a>
 
@@ -914,158 +975,424 @@
 
 
   <!-- =========================
-       CAROUSEL SCRIPT
+       LANGUAGE + CAROUSEL SYSTEM
   ========================== -->
 
   <script>
 
-    document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+    const translations = {
 
-      const slides =
-        Array.from(carousel.querySelectorAll(".carousel-slide"));
+      en: {
 
-      const previousButton =
-        carousel.querySelector(".carousel-arrow.prev");
+        "nav.experience":
+          "Experience",
 
-      const nextButton =
-        carousel.querySelector(".carousel-arrow.next");
+        "nav.skillkit":
+          "Skillkit",
 
-      const caption =
-        carousel.querySelector(".photo-caption");
+        "nav.education":
+          "Education",
 
-      const dotsContainer =
-        carousel.querySelector(".carousel-dots");
-
-
-      let currentIndex = 0;
+        "nav.highlights":
+          "Highlights",
 
 
+        "highlights.eyebrow":
+          "Personal Highlights",
 
-      /* Create dots */
-
-      slides.forEach((slide, index) => {
-
-        const dot =
-          document.createElement("button");
-
-        dot.className =
-          "carousel-dot";
-
-        dot.type =
-          "button";
-
-        dot.setAttribute(
-          "aria-label",
-          `Show photo ${index + 1}`
-        );
+        "highlights.title":
+          "Research, curiosity, and life beyond the lab.",
 
 
-        dot.addEventListener("click", () => {
-          showSlide(index);
+        "research.title":
+          "Research",
+
+        "research.copy":
+          "From molecular experiments to evolutionary analysis, I enjoy turning biological questions into testable ideas.",
+
+
+        "curiosity.title":
+          "Curiosity",
+
+        "curiosity.copy":
+          "Unknown things are always interesting — sometimes they become questions, sometimes they become stories.",
+
+
+        "life.title":
+          "Life",
+
+        "life.copy":
+          "Sometimes I’m thinking about life. Sometimes I’m just figuring out where to have fun next.",
+
+
+        "footer.text":
+          "Xia Meng · Research · Curiosity · Life",
+
+        "footer.contact":
+          "Contact"
+
+      },
+
+
+      zh: {
+
+        "nav.experience":
+          "经历",
+
+        "nav.skillkit":
+          "技能",
+
+        "nav.education":
+          "教育",
+
+        "nav.highlights":
+          "亮点",
+
+
+        "highlights.eyebrow":
+          "个人亮点",
+
+        "highlights.title":
+          "科研、好奇心，以及实验室之外的生活。",
+
+
+        "research.title":
+          "科研",
+
+        "research.copy":
+          "从分子实验到进化分析，我喜欢把生物学问题转化为一个个可以验证的想法。",
+
+
+        "curiosity.title":
+          "好奇心",
+
+        "curiosity.copy":
+          "未知的一切总是很有趣——有时候它们会变成问题，有时候会变成故事。",
+
+
+        "life.title":
+          "生活",
+
+        "life.copy":
+          "有时候在思考人生，有时候在研究哪里更好玩。",
+
+
+        "footer.text":
+          "蒙霞 · 科研 · 好奇心 · 生活",
+
+        "footer.contact":
+          "联系"
+
+      }
+
+    };
+
+
+    const carouselControllers = [];
+
+
+    function currentLanguage() {
+
+      return document.documentElement.lang
+        .toLowerCase()
+        .startsWith("zh")
+        ? "zh"
+        : "en";
+
+    }
+
+
+    function applyLanguage(language) {
+
+      const selectedLanguage =
+        language === "zh" ? "zh" : "en";
+
+
+      document.documentElement.lang =
+        selectedLanguage === "zh"
+          ? "zh-CN"
+          : "en";
+
+
+      document
+        .querySelectorAll("[data-i18n]")
+        .forEach((element) => {
+
+          const key =
+            element.dataset.i18n;
+
+          const translatedText =
+            translations[selectedLanguage][key];
+
+          if (translatedText !== undefined) {
+            element.textContent = translatedText;
+          }
+
         });
 
 
-        dotsContainer.appendChild(dot);
+      document
+        .querySelectorAll("[data-lang-option]")
+        .forEach((option) => {
 
-      });
+          const isActive =
+            option.dataset.langOption === selectedLanguage;
 
-
-
-      const dots =
-        Array.from(
-          dotsContainer.querySelectorAll(".carousel-dot")
-        );
-
-
-
-      function showSlide(index) {
-
-        if (index < 0) {
-          index = slides.length - 1;
-        }
-
-        if (index >= slides.length) {
-          index = 0;
-        }
-
-
-        currentIndex = index;
-
-
-        slides.forEach((slide, slideIndex) => {
-
-          slide.classList.toggle(
+          option.classList.toggle(
             "active",
-            slideIndex === currentIndex
+            isActive
           );
 
         });
 
 
-        dots.forEach((dot, dotIndex) => {
+      document.title =
+        selectedLanguage === "zh"
+          ? "个人亮点 | 蒙霞"
+          : "Personal Highlights | Xia Meng";
 
-          dot.classList.toggle(
-            "active",
-            dotIndex === currentIndex
+
+      localStorage.setItem(
+        "preferredLanguage",
+        selectedLanguage
+      );
+
+
+      carouselControllers.forEach((controller) => {
+        controller.refreshCaption();
+      });
+
+    }
+
+
+    function initializeCarousels() {
+
+      document
+        .querySelectorAll("[data-carousel]")
+        .forEach((carousel) => {
+
+          const slides =
+            Array.from(
+              carousel.querySelectorAll(".carousel-slide")
+            );
+
+          const previousButton =
+            carousel.querySelector(".carousel-arrow.prev");
+
+          const nextButton =
+            carousel.querySelector(".carousel-arrow.next");
+
+          const caption =
+            carousel.querySelector(".photo-caption");
+
+          const dotsContainer =
+            carousel.querySelector(".carousel-dots");
+
+
+          let currentIndex = 0;
+
+
+          slides.forEach((slide, index) => {
+
+            const dot =
+              document.createElement("button");
+
+            dot.className =
+              "carousel-dot";
+
+            dot.type =
+              "button";
+
+            dot.setAttribute(
+              "aria-label",
+              `Show photo ${index + 1}`
+            );
+
+
+            dot.addEventListener("click", () => {
+              showSlide(index);
+            });
+
+
+            dotsContainer.appendChild(dot);
+
+          });
+
+
+          const dots =
+            Array.from(
+              dotsContainer.querySelectorAll(".carousel-dot")
+            );
+
+
+          function refreshCaption() {
+
+            const slide =
+              slides[currentIndex];
+
+            const lang =
+              currentLanguage();
+
+            caption.textContent =
+              lang === "zh"
+                ? slide.dataset.captionZh || ""
+                : slide.dataset.captionEn || "";
+
+          }
+
+
+          function showSlide(index) {
+
+            if (index < 0) {
+              index = slides.length - 1;
+            }
+
+            if (index >= slides.length) {
+              index = 0;
+            }
+
+
+            currentIndex = index;
+
+
+            slides.forEach((slide, slideIndex) => {
+
+              slide.classList.toggle(
+                "active",
+                slideIndex === currentIndex
+              );
+
+            });
+
+
+            dots.forEach((dot, dotIndex) => {
+
+              dot.classList.toggle(
+                "active",
+                dotIndex === currentIndex
+              );
+
+            });
+
+
+            refreshCaption();
+
+          }
+
+
+          previousButton.addEventListener(
+            "click",
+            () => {
+              showSlide(currentIndex - 1);
+            }
           );
+
+
+          nextButton.addEventListener(
+            "click",
+            () => {
+              showSlide(currentIndex + 1);
+            }
+          );
+
+
+          carousel.setAttribute(
+            "tabindex",
+            "0"
+          );
+
+
+          carousel.addEventListener(
+            "keydown",
+            (event) => {
+
+              if (event.key === "ArrowLeft") {
+                showSlide(currentIndex - 1);
+              }
+
+              if (event.key === "ArrowRight") {
+                showSlide(currentIndex + 1);
+              }
+
+            }
+          );
+
+
+          const controller = {
+            refreshCaption
+          };
+
+
+          carouselControllers.push(
+            controller
+          );
+
+
+          showSlide(0);
 
         });
 
-
-        const currentCaption =
-          slides[currentIndex].dataset.caption;
+    }
 
 
-        caption.textContent =
-          currentCaption || "";
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
 
-      }
-
-
-
-      previousButton.addEventListener("click", () => {
-        showSlide(currentIndex - 1);
-      });
+        initializeCarousels();
 
 
-      nextButton.addEventListener("click", () => {
-        showSlide(currentIndex + 1);
-      });
+        const toggle =
+          document.querySelector(
+            "[data-lang-toggle]"
+          );
 
 
+        const savedLanguage =
+          localStorage.getItem(
+            "preferredLanguage"
+          );
 
-      /* Keyboard navigation */
 
-      carousel.addEventListener("keydown", (event) => {
+        const initialLanguage =
+          savedLanguage === "zh"
+            ? "zh"
+            : "en";
 
-        if (event.key === "ArrowLeft") {
-          showSlide(currentIndex - 1);
+
+        applyLanguage(
+          initialLanguage
+        );
+
+
+        if (toggle) {
+
+          toggle.addEventListener(
+            "click",
+            () => {
+
+              const nextLanguage =
+                currentLanguage() === "en"
+                  ? "zh"
+                  : "en";
+
+
+              applyLanguage(
+                nextLanguage
+              );
+
+            }
+          );
+
         }
 
-        if (event.key === "ArrowRight") {
-          showSlide(currentIndex + 1);
+
+        if (window.lucide) {
+          window.lucide.createIcons();
         }
 
-      });
-
-
-
-      /* Initial state */
-
-      showSlide(0);
-
-    });
-
-
-    /* Refresh Lucide icons */
-
-    window.addEventListener("load", () => {
-
-      if (window.lucide) {
-        window.lucide.createIcons();
       }
-
-    });
+    );
 
   </script>
 
