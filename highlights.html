@@ -1,77 +1,1075 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Personal Highlights | Xia Meng</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <div class="atmosphere" aria-hidden="true">
-      <span class="dune dune-one"></span>
-      <span class="dune dune-two"></span>
-      <span class="dune dune-three"></span>
-    </div>
 
-    <header class="site-header">
-      <a class="brand" href="index.html"><span class="brand-mark photo-mark"><img src="sh.jpg" alt=""></span><span><strong>Your Name</strong><small>你的名字</small></span></a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="index.html#experience" data-i18n="nav.experience">Experience</a>
-        <a href="index.html#skillkit" data-i18n="nav.skillkit">Skillkit</a>
-        <a href="education.html" data-i18n="nav.education">Education</a>
-    
-        <a href="highlights.html" data-i18n="nav.highlights">Highlights</a>
-      </nav>
-      <button class="lang-switch" type="button" data-lang-toggle>
-        <span data-lang-option="en">EN</span>
-        <span data-lang-option="zh">中</span>
-      </button>
-      <a class="nav-cta" href="index.html#contact" aria-label="Contact Xia Meng">
-        <i data-lucide="send"></i>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Research, curiosity, and life highlights of Xia Meng."
+  >
+
+  <title>Personal Highlights | Xia Meng</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script
+    src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"
+    defer
+  ></script>
+
+  <script src="script.js" defer></script>
+
+
+  <!-- Highlights page styles -->
+  <style>
+
+    /* =========================
+       PAGE
+    ========================== */
+
+    .highlights-page {
+      width: min(92%, 1400px);
+      margin: 0 auto;
+      padding: 180px 0 100px;
+    }
+
+    .highlights-intro {
+      margin-bottom: 3rem;
+      max-width: 900px;
+    }
+
+    .highlights-intro .eyebrow {
+      margin-bottom: 1rem;
+    }
+
+    .highlights-intro h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 5vw, 5.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+
+    /* =========================
+       PYRAMID LAYOUT
+    ========================== */
+
+    .highlight-pyramid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .highlight-card {
+      position: relative;
+      overflow: hidden;
+
+      border-radius: 38px;
+      padding: 1.5rem;
+
+      background: rgba(255, 255, 255, 0.18);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.42);
+
+      box-shadow:
+        0 24px 60px rgba(57, 39, 29, 0.10);
+
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+
+    /* Research occupies the whole top row */
+    .research-card {
+      grid-column: 1 / -1;
+    }
+
+
+    /* =========================
+       CARD HEADERS
+    ========================== */
+
+    .highlight-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+
+      margin-bottom: 1.25rem;
+    }
+
+    .highlight-heading h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+    }
+
+    .highlight-heading p {
+      margin: 0;
+      max-width: 650px;
+
+      color: rgba(30, 26, 24, 0.68);
+      line-height: 1.55;
+    }
+
+
+    /* =========================
+       CAROUSEL
+    ========================== */
+
+    .photo-carousel {
+      position: relative;
+    }
+
+    .carousel-frame {
+      position: relative;
+      overflow: hidden;
+
+      border-radius: 28px;
+
+      background:
+        rgba(255, 255, 255, 0.20);
+    }
+
+
+    /* Research is wider */
+    .research-card .carousel-frame {
+      height: 520px;
+    }
+
+    /* Bottom two are slightly smaller */
+    .small-highlight .carousel-frame {
+      height: 460px;
+    }
+
+
+    .carousel-slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-slide.active {
+      display: block;
+    }
+
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+
+    /* Research includes screenshots/charts,
+       so contain avoids cutting them off */
+    .research-card .carousel-slide img {
+      object-fit: contain;
+
+      background:
+        rgba(255, 255, 255, 0.22);
+    }
+
+
+    /* Curiosity & Life work better as photo cards */
+    .small-highlight .carousel-slide img {
+      object-fit: cover;
+    }
+
+
+    /* =========================
+       ARROWS
+    ========================== */
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      z-index: 10;
+
+      width: 50px;
+      height: 50px;
+
+      border: 0;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 2rem;
+
+      cursor: pointer;
+
+      background:
+        rgba(255, 255, 255, 0.78);
+
+      color: #272321;
+
+      box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.10);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .carousel-arrow:hover {
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .carousel-arrow.prev {
+      left: 18px;
+    }
+
+    .carousel-arrow.next {
+      right: 18px;
+    }
+
+
+    /* =========================
+       CAPTION
+    ========================== */
+
+    .photo-caption {
+      min-height: 76px;
+
+      padding: 1.15rem 0.35rem 0.4rem;
+
+      font-size: 1rem;
+      line-height: 1.55;
+
+      color: rgba(30, 26, 24, 0.75);
+    }
+
+    .photo-caption strong {
+      color: #272321;
+    }
+
+
+    /* =========================
+       DOTS
+    ========================== */
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      margin-top: 0.8rem;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      background:
+        rgba(40, 34, 31, 0.25);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .carousel-dot.active {
+      transform: scale(1.35);
+
+      background:
+        rgba(40, 34, 31, 0.85);
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      .highlights-page {
+        width: min(94%, 760px);
+        padding-top: 140px;
+      }
+
+      .highlight-pyramid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-card {
+        grid-column: auto;
+      }
+
+      .highlight-heading {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .research-card .carousel-frame,
+      .small-highlight .carousel-frame {
+        height: 420px;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .highlight-card {
+        padding: 1rem;
+        border-radius: 28px;
+      }
+
+      .research-card .carousel-frame,
+      .small-highlight .carousel-frame {
+        height: 340px;
+      }
+
+      .carousel-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 1.6rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body id="top">
+
+
+  <!-- =========================
+       BACKGROUND
+  ========================== -->
+
+  <div class="atmosphere" aria-hidden="true">
+    <span class="dune dune-one"></span>
+    <span class="dune dune-two"></span>
+    <span class="dune dune-three"></span>
+  </div>
+
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="site-header">
+
+    <a
+      class="brand"
+      href="index.html"
+      aria-label="Xia Meng homepage"
+    >
+
+      <span class="brand-mark photo-mark">
+        <img src="sh.jpg" alt="">
+      </span>
+
+      <span>
+        <strong>Xia Meng</strong>
+        <small>蒙霞</small>
+      </span>
+
+    </a>
+
+
+    <nav
+      class="site-nav"
+      aria-label="Main navigation"
+    >
+
+      <a
+        href="index.html#experience"
+        data-i18n="nav.experience"
+      >
+        Experience
       </a>
-    </header>
-    <main class="detail-page">
-      <section class="page-hero">
-        <p class="eyebrow" data-i18n="highlights.eyebrow">Personal Highlights</p>
-        <h1 data-i18n="highlights.title">A one-line summary of your personality, interests, and curiosity.</h1>
-      </section>
-      <section class="highlight-grid">
-        <article class="highlight-item">
-          <i data-lucide="music-2"></i>
-          <h2 data-i18n="highlights.music.title">Interest One</h2>
-          <ul class="detail-points compact">
-            <li data-i18n-html="highlights.music.1"><strong>Detail</strong> A specific achievement or credential.</li>
-            <li data-i18n-html="highlights.music.2"><strong>Detail</strong> A long-term practice or hobby.</li>
-          </ul>
-        </article>
-        <article class="highlight-item">
-          <i data-lucide="palette"></i>
-          <h2 data-i18n="highlights.visual.title">Interest Two</h2>
-          <ul class="detail-points compact">
-            <li data-i18n-html="highlights.visual.1"><strong>Detail</strong> What you make or practice.</li>
-            <li data-i18n-html="highlights.visual.2"><strong>Detail</strong> Another creative outlet.</li>
-          </ul>
-        </article>
-        <article class="highlight-item">
-          <i data-lucide="mountain"></i>
-          <h2 data-i18n="highlights.outdoors.title">Interest Three</h2>
-          <ul class="detail-points compact">
-            <li data-i18n-html="highlights.outdoors.1"><strong>Detail</strong> An activity or membership.</li>
-            <li data-i18n-html="highlights.outdoors.2"><strong>Signal</strong> What this interest says about you.</li>
-          </ul>
-        </article>
-        <article class="highlight-item">
-          <i data-lucide="heart-handshake"></i>
-          <h2 data-i18n="highlights.community.title">Interest Four</h2>
-          <ul class="detail-points compact">
-            <li data-i18n-html="highlights.community.1"><strong>Detail</strong> Community involvement or service.</li>
-            <li data-i18n-html="highlights.community.2"><strong>Detail</strong> Another community connection.</li>
-          </ul>
-        </article>
-      </section>
-    </main>
-    <footer class="site-footer"><span>Xia Meng</span><a href="index.html#contact" data-i18n="contact.eyebrow">Contact</a></footer>
-  </body>
+
+
+      <a
+        href="index.html#skillkit"
+        data-i18n="nav.skillkit"
+      >
+        Skillkit
+      </a>
+
+
+      <a
+        href="education.html"
+        data-i18n="nav.education"
+      >
+        Education
+      </a>
+
+
+      <a
+        href="highlights.html"
+        data-i18n="nav.highlights"
+      >
+        Highlights
+      </a>
+
+    </nav>
+
+
+    <button
+      class="lang-switch"
+      type="button"
+      data-lang-toggle
+    >
+      <span data-lang-option="en">EN</span>
+      <span data-lang-option="zh">中</span>
+    </button>
+
+
+    <a
+      class="nav-cta"
+      href="index.html#contact"
+      aria-label="Contact Xia Meng"
+    >
+      <i data-lucide="send"></i>
+    </a>
+
+  </header>
+
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main class="highlights-page">
+
+
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <section class="highlights-intro">
+
+      <p class="eyebrow">
+        Personal Highlights
+      </p>
+
+      <h1>
+        Research, curiosity,
+        and life beyond the lab.
+      </h1>
+
+    </section>
+
+
+
+    <!-- =========================
+         PYRAMID
+    ========================== -->
+
+    <section class="highlight-pyramid">
+
+
+      <!-- ==================================================
+           1. RESEARCH
+      =================================================== -->
+
+      <article
+        class="highlight-card research-card"
+        data-carousel
+      >
+
+        <div class="highlight-heading">
+
+          <div>
+            <p class="eyebrow">
+              01
+            </p>
+
+            <h2>
+              Research
+            </h2>
+          </div>
+
+
+          <p>
+            From molecular experiments to evolutionary analysis,
+            I enjoy turning biological questions into testable ideas.
+          </p>
+
+        </div>
+
+
+
+        <div class="photo-carousel">
+
+
+          <div class="carousel-frame">
+
+
+            <!-- Research 1 -->
+
+            <div
+              class="carousel-slide active"
+              data-caption="In the lab — where questions start becoming experiments."
+            >
+              <img
+                src="r1.jpg"
+                alt="Xia Meng conducting research in the laboratory"
+              >
+            </div>
+
+
+            <!-- Research 2 -->
+
+            <div
+              class="carousel-slide"
+              data-caption="From sequences to patterns — part of the computational side of biological research."
+            >
+              <img
+                src="r2.png"
+                alt="Research sequence analysis"
+              >
+            </div>
+
+
+            <!-- Research 3 -->
+
+            <div
+              class="carousel-slide"
+              data-caption="Phylogenetic analysis — tracing relationships hidden in sequence data."
+            >
+              <img
+                src="r3.png"
+                alt="Phylogenetic analysis"
+              >
+            </div>
+
+
+            <!-- Research 4 -->
+
+            <div
+              class="carousel-slide"
+              data-caption="The everyday side of research: experiments, notes, samples, and repetition."
+            >
+              <img
+                src="r4.jpg"
+                alt="Laboratory research workspace"
+              >
+            </div>
+
+
+            <!-- Research 5 -->
+
+            <div
+              class="carousel-slide"
+              data-caption="A result is only interesting after you have checked it twice."
+            >
+              <img
+                src="r4.png"
+                alt="Experimental result"
+              >
+            </div>
+
+
+            <!-- Research 6 -->
+
+            <div
+              class="carousel-slide"
+              data-caption="Research is also about stepping back, discussing ideas, and seeing the bigger picture."
+            >
+              <img
+                src="r5.jpg"
+                alt="Research and academic life"
+              >
+            </div>
+
+
+
+            <button
+              class="carousel-arrow prev"
+              type="button"
+              aria-label="Previous research photo"
+            >
+              ‹
+            </button>
+
+
+            <button
+              class="carousel-arrow next"
+              type="button"
+              aria-label="Next research photo"
+            >
+              ›
+            </button>
+
+
+          </div>
+
+
+          <div class="photo-caption">
+            In the lab — where questions start becoming experiments.
+          </div>
+
+
+          <div
+            class="carousel-dots"
+            aria-label="Research photo navigation"
+          ></div>
+
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ==================================================
+           2. CURIOSITY
+      =================================================== -->
+
+      <article
+        class="highlight-card small-highlight"
+        data-carousel
+      >
+
+        <div class="highlight-heading">
+
+          <div>
+            <p class="eyebrow">
+              02
+            </p>
+
+            <h2>
+              Curiosity
+            </h2>
+          </div>
+
+        </div>
+
+
+        <p style="margin-top: -0.5rem; margin-bottom: 1.25rem; line-height: 1.55;">
+          Unknown things are always interesting —
+          sometimes they become questions,
+          sometimes they become stories.
+        </p>
+
+
+
+        <div class="photo-carousel">
+
+
+          <div class="carousel-frame">
+
+
+            <!-- Curiosity 1 -->
+
+            <div
+              class="carousel-slide active"
+              data-caption="Sometimes curiosity starts under a microscope."
+            >
+              <img
+                src="c1.jpg"
+                alt="Microscope observation"
+              >
+            </div>
+
+
+            <!-- Curiosity 2 -->
+
+            <div
+              class="carousel-slide"
+              data-caption="Sometimes it starts by looking up, looking around, and noticing something new."
+            >
+              <img
+                src="c2.jpg"
+                alt="Exploring the world"
+              >
+            </div>
+
+
+            <!-- Curiosity 3 -->
+
+            <div
+              class="carousel-slide"
+              data-caption="Sometimes the answer is hiding somewhere inside a terminal window."
+            >
+              <img
+                src="c3.png"
+                alt="Computational exploration"
+              >
+            </div>
+
+
+            <!-- Curiosity 4 -->
+
+            <div
+              class="carousel-slide"
+              data-caption="And sometimes the best ideas begin as very messy notes."
+            >
+              <img
+                src="c4.jpg"
+                alt="Research notes and ideas"
+              >
+            </div>
+
+
+
+            <button
+              class="carousel-arrow prev"
+              type="button"
+              aria-label="Previous curiosity photo"
+            >
+              ‹
+            </button>
+
+
+            <button
+              class="carousel-arrow next"
+              type="button"
+              aria-label="Next curiosity photo"
+            >
+              ›
+            </button>
+
+
+          </div>
+
+
+          <div class="photo-caption">
+            Sometimes curiosity starts under a microscope.
+          </div>
+
+
+          <div
+            class="carousel-dots"
+            aria-label="Curiosity photo navigation"
+          ></div>
+
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ==================================================
+           3. LIFE
+      =================================================== -->
+
+      <article
+        class="highlight-card small-highlight"
+        data-carousel
+      >
+
+        <div class="highlight-heading">
+
+          <div>
+            <p class="eyebrow">
+              03
+            </p>
+
+            <h2>
+              Life
+            </h2>
+          </div>
+
+        </div>
+
+
+        <p style="margin-top: -0.5rem; margin-bottom: 1.25rem; line-height: 1.55;">
+          Sometimes I’m thinking about life.
+          Sometimes I’m just figuring out
+          where to have fun next.
+        </p>
+
+
+
+        <div class="photo-carousel">
+
+
+          <div class="carousel-frame">
+
+
+            <!-- Life 1 -->
+
+            <div
+              class="carousel-slide active"
+              data-caption="Serious about science. Slightly less serious when there is a good photo opportunity."
+            >
+              <img
+                src="l1.jpg"
+                alt="Life highlight"
+              >
+            </div>
+
+
+            <!-- Life 2 -->
+
+            <div
+              class="carousel-slide"
+              data-caption="A small milestone — and a good reason to smile."
+            >
+              <img
+                src="l2.jpg"
+                alt="Personal milestone"
+              >
+            </div>
+
+
+            <!-- Life 3 -->
+
+            <div
+              class="carousel-slide"
+              data-caption="New places, new views, and occasionally new ways to get cold."
+            >
+              <img
+                src="l3.jpg"
+                alt="Outdoor adventure"
+              >
+            </div>
+
+
+            <!-- Life 4 -->
+
+            <div
+              class="carousel-slide"
+              data-caption="Collecting moments, not just deadlines."
+            >
+              <img
+                src="l4.jpg"
+                alt="Life and exploration"
+              >
+            </div>
+
+
+
+            <button
+              class="carousel-arrow prev"
+              type="button"
+              aria-label="Previous life photo"
+            >
+              ‹
+            </button>
+
+
+            <button
+              class="carousel-arrow next"
+              type="button"
+              aria-label="Next life photo"
+            >
+              ›
+            </button>
+
+
+          </div>
+
+
+          <div class="photo-caption">
+            Serious about science. Slightly less serious when there is a good photo opportunity.
+          </div>
+
+
+          <div
+            class="carousel-dots"
+            aria-label="Life photo navigation"
+          ></div>
+
+
+        </div>
+
+      </article>
+
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="site-footer">
+
+    <span>
+      Xia Meng · Research · Curiosity · Life
+    </span>
+
+    <a href="index.html#contact">
+      Contact
+    </a>
+
+  </footer>
+
+
+
+  <!-- =========================
+       CAROUSEL SCRIPT
+  ========================== -->
+
+  <script>
+
+    document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+
+      const slides =
+        Array.from(carousel.querySelectorAll(".carousel-slide"));
+
+      const previousButton =
+        carousel.querySelector(".carousel-arrow.prev");
+
+      const nextButton =
+        carousel.querySelector(".carousel-arrow.next");
+
+      const caption =
+        carousel.querySelector(".photo-caption");
+
+      const dotsContainer =
+        carousel.querySelector(".carousel-dots");
+
+
+      let currentIndex = 0;
+
+
+
+      /* Create dots */
+
+      slides.forEach((slide, index) => {
+
+        const dot =
+          document.createElement("button");
+
+        dot.className =
+          "carousel-dot";
+
+        dot.type =
+          "button";
+
+        dot.setAttribute(
+          "aria-label",
+          `Show photo ${index + 1}`
+        );
+
+
+        dot.addEventListener("click", () => {
+          showSlide(index);
+        });
+
+
+        dotsContainer.appendChild(dot);
+
+      });
+
+
+
+      const dots =
+        Array.from(
+          dotsContainer.querySelectorAll(".carousel-dot")
+        );
+
+
+
+      function showSlide(index) {
+
+        if (index < 0) {
+          index = slides.length - 1;
+        }
+
+        if (index >= slides.length) {
+          index = 0;
+        }
+
+
+        currentIndex = index;
+
+
+        slides.forEach((slide, slideIndex) => {
+
+          slide.classList.toggle(
+            "active",
+            slideIndex === currentIndex
+          );
+
+        });
+
+
+        dots.forEach((dot, dotIndex) => {
+
+          dot.classList.toggle(
+            "active",
+            dotIndex === currentIndex
+          );
+
+        });
+
+
+        const currentCaption =
+          slides[currentIndex].dataset.caption;
+
+
+        caption.textContent =
+          currentCaption || "";
+
+      }
+
+
+
+      previousButton.addEventListener("click", () => {
+        showSlide(currentIndex - 1);
+      });
+
+
+      nextButton.addEventListener("click", () => {
+        showSlide(currentIndex + 1);
+      });
+
+
+
+      /* Keyboard navigation */
+
+      carousel.addEventListener("keydown", (event) => {
+
+        if (event.key === "ArrowLeft") {
+          showSlide(currentIndex - 1);
+        }
+
+        if (event.key === "ArrowRight") {
+          showSlide(currentIndex + 1);
+        }
+
+      });
+
+
+
+      /* Initial state */
+
+      showSlide(0);
+
+    });
+
+
+    /* Refresh Lucide icons */
+
+    window.addEventListener("load", () => {
+
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+    });
+
+  </script>
+
+
+</body>
+
 </html>
