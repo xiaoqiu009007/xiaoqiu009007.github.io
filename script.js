@@ -62,67 +62,7 @@ const zhTranslations = {
   "contact.email": "邮件",
   "footer.text": "你的名字 · 你的领域与方向",
   "footer.top": "回到顶部",
- "education.eyebrow": "教育与科研训练",
 
-"education.title": "在学习与探索中建立科研基础。",
-
-
-"education.undergraduate.title": "本科教育",
-
-"education.undergraduate.university":
-"<strong>学校</strong> 海南大学",
-
-"education.undergraduate.degree":
-"<strong>学位</strong> 农学教育学士学位",
-
-"education.undergraduate.performance":
-"<strong>学业表现</strong> 平均成绩：87.65 / 100 · 专业前 7.14%",
-
-"education.undergraduate.coursework":
-"<strong>核心课程</strong> 遗传学 · 植物生理与生化 · 微生物学",
-
-"education.undergraduate.study":
-"<strong>拓展学习</strong> 农业机械学 · 农业信息技术 · 农业物联网应用",
-
-
-
-"education.training.title":
-"科研训练",
-
-"education.training.internship":
-"<strong>科研实习</strong> 深圳湾实验室 · 科研实习生",
-
-"education.training.focus":
-"<strong>研究方向</strong> 鼠诺如病毒 NS3 · 分子克隆 · 重组蛋白表达 · 蛋白纯化",
-
-"education.training.program":
-"<strong>学术项目</strong> SMART 国际暑期学校 · 深圳医学科学院",
-
-"education.training.skills":
-"<strong>训练方向</strong> 冷冻电镜 · 计算模拟 · 分子重构 · 定量细胞生物学 · 线粒体生物学 · 微生物系统生物学",
-
-
-
-"education.honors.label":
-"荣誉",
-
-"education.honors.title":
-"荣誉与专利",
-
-"education.honors.scholarship":
-"<strong>奖学金</strong> 海南大学一等奖学金（2025）",
-
-"education.honors.competition":
-"<strong>竞赛</strong> 第十二届“挑战杯”海南省大学生课外学术科技作品竞赛三等奖（2025）",
-
-"education.honors.patent1":
-"<strong>专利1</strong> 基于动态光密度追踪的高通量微生物活性及药敏检测系统。",
-
-"education.honors.patent2":
-"<strong>专利2</strong> 基于复合冷却、石墨烯加热及温差补偿的双相温控抗聚集系统。",
-
-"education.honors.patent3":
-"<strong>专利3</strong> 集成多光谱光源与纳米光子计数器的微生物单光子检测系统。"
   "projects.eyebrow": "项目与研究",
   "projects.title": "用一句话概括你做的项目与研究类型。",
   "projects.role.ra": "你的角色",
