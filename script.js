@@ -1,4 +1,147 @@
 const zhTranslations = {
+  education:{
+
+
+eyebrow:{
+en:"Education & Training",
+zh:"教育与科研训练"
+},
+
+
+title:{
+en:"Learning and exploring.",
+zh:"在学习中探索，在探索中成长。"
+},
+
+
+undergraduate:{
+
+
+title:{
+en:"Undergraduate Education",
+zh:"本科教育"
+},
+
+
+university:{
+en:"<strong>University</strong> Hainan University",
+zh:"<strong>学校</strong> 海南大学"
+},
+
+
+degree:{
+en:"<strong>Degree</strong> Bachelor's Degree in Agriculture Education",
+zh:"<strong>学位</strong> 农艺教育学士学位"
+},
+
+
+performance:{
+en:"<strong>Academic Performance</strong> Average Score: 87.65 / 100 · Top 7.14%",
+zh:"<strong>学业表现</strong> 平均成绩87.65 / 100 · 专业前7.14%"
+},
+
+
+coursework:{
+en:"<strong>Core Coursework</strong> Genetics · Plant Physiology and Biochemistry · Microbiology",
+zh:"<strong>核心课程</strong> 遗传学 · 植物生理与生化 · 微生物学"
+},
+
+
+study:{
+en:"<strong>Extended Study</strong> General Agricultural Machinery · Agricultural Information Technology · Agricultural Internet of Things Applications",
+zh:"<strong>拓展学习</strong> 农业机械学 · 农业信息技术 · 农业物联网应用"
+}
+
+
+},
+
+
+
+training:{
+
+
+title:{
+en:"Academic Training",
+zh:"科研训练"
+},
+
+
+internship:{
+en:"<strong>Research Internship</strong> Shenzhen Bay Laboratory · Research Intern",
+zh:"<strong>科研实习</strong> 深圳湾实验室 · 科研实习生"
+},
+
+
+focus:{
+en:"<strong>Research Focus</strong> Murine norovirus NS3 · Molecular cloning · Recombinant protein expression · Protein purification",
+zh:"<strong>研究方向</strong> 鼠诺如病毒NS3蛋白 · 分子克隆 · 重组蛋白表达 · 蛋白纯化"
+},
+
+
+program:{
+en:"<strong>Academic Program</strong> SMART International Summer School · Shenzhen Medical Academy of Research and Translation",
+zh:"<strong>学术项目</strong> SMART国际暑期学校 · 深圳医学科学院"
+},
+
+
+skills:{
+en:"<strong>Training Focus</strong> Cryo-electron microscopy · Computational modeling · Molecular reconstitution",
+zh:"<strong>训练内容</strong> 冷冻电镜 · 计算建模 · 分子重构"
+}
+
+
+},
+
+
+
+honors:{
+
+
+label:{
+en:"Honors",
+zh:"荣誉"
+},
+
+
+title:{
+en:"Honors & Patents",
+zh:"荣誉与专利"
+},
+
+
+scholarship:{
+en:"<strong>Scholarships</strong> First-Class Comprehensive Scholarship, Hainan University (2025)",
+zh:"<strong>奖学金</strong> 海南大学一等奖学金（2025）"
+},
+
+
+competition:{
+en:"<strong>Competition</strong> Third Prize, 12th Challenge Cup Competition (2025)",
+zh:"<strong>竞赛</strong> 第十二届挑战杯海南省大学生课外学术科技作品竞赛省级三等奖（2025）"
+},
+
+
+patent1:{
+en:"<strong>Patent 1</strong> High-throughput microbial activity detection system.",
+zh:"<strong>专利1</strong> 高通量微生物活性检测系统"
+},
+
+
+patent2:{
+en:"<strong>Patent 2</strong> Temperature-controlled anti-aggregation system.",
+zh:"<strong>专利2</strong> 温控抗聚集系统"
+},
+
+
+patent3:{
+en:"<strong>Patent 3</strong> Microbial single-photon detection system.",
+zh:"<strong>专利3</strong> 微生物单光子检测系统"
+}
+
+
+}
+
+}
   "nav.experience": "经历",
   "nav.skillkit": "技能",
   "nav.education": "教育",
